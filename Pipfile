@@ -12,6 +12,8 @@ django-widget-tweaks = "*"
 requests = "*"
 unicorn = "*"
 psycopg2-binary = "*"
+dj-database-url = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
