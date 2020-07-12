@@ -1,0 +1,28 @@
+{% extends 'halls/base.html' %}
+{% block content %}
+<div class = 'container'>
+  <h1>{{ hall.title }}</h1>
+    <h5 class = 'text-muted'> - By  {{ hall.user}}</h5>
+{% if user.id == hall.user.id %}
+  <a href = '{% url "update" hall.id %}' class = 'btn btn-primary'>Edit</a>
+  <a href = '{% url "video" hall.id%}' class = 'btn btn-primary'>Add Video</a>
+  <a href = '{% url "delete" hall.id %}' class = 'btn btn-danger'>Delete</a>
+{% endif %}
+
+  <div class = 'row'>
+      {% for vid in hall.video_set.all %}
+      <div class="col-md-4 mt-3">
+        <div class="card mb-4 shadow-sm">
+          <iframe width="100%" height="225" src="https://www.youtube.com/embed/{{ vid.youtube_id }}"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="card-body">
+            <p class="card-text">{{vid.title}}</p>
+            {% if user.id == hall.user.id %}
+              <a href="{% url 'delvid' vid.id %}" class='card-link btn btn-danger' >Delete</a>
+            {% endif %}
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+      </div>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'halls/base.html' %}
+{% block content %}
+<section class = 'jumbotron text-center'>
+  <div class = 'container'>
+    <h1 class = 'jumbotron-heading'>Create your personal Hall of Fame</h1>
+    <p class = 'lead text-muted'>Share your top 10 goto videos to the world.Click Below to get started</p>
+    <p>
+      <a href = '{% url "create" %}' class = 'btn btn-primary'>Create Your Hall of Fame</a>
+    </p>
+  </div>
+</section>
+<div class = 'container'>
+  <h1 class = 'text-center'>Recent Videos</h1>
+  {% for hall in rec %}
+  <h2><a href = "{% url 'detail' hall.id %}" style = 'color:black;'>{{hall.title}}</a></h2>
+  <div class = 'row'>
+      {% for vid in hall.video_set.all %}
+      <div class="col-md-4 mt-3">
+        <div class="card mb-4 shadow-sm">
+          <iframe width="100%" height="225" src="https://www.youtube.com/embed/{{ vid.youtube_id }}"  frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <div class="card-body">
+            <p class="card-text">{{vid.title}}</p>
+
+          </div>
+        </div>
+        </div>
+      {% endfor %}
+      </div>
+    {% endfor %}
+
+</div>
+{% endblock %}
