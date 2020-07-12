@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'opd!w5%2o2nq4i%$+uzw+#x4l1fx09_nqua3(1)l0%7(fqo61%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['floating-peak-34015.herokuapp.com/','HallofFame.com','www.halloffame.com']
+ALLOWED_HOSTS = ['floating-peak-34015.herokuapp.com','HallofFame.com','www.halloffame.com']
 
 
 # Application definition
