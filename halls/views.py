@@ -13,8 +13,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 YOUTUBE_API_KEY = 'AIzaSyCUoHYkjv_WGJpkf4RgBd6VI_U5_FmxMx8'
 def home(request):
-    recent_hall = Hall.objects.all().order_by('-id')[:2]
-    
+    recent_hall = Hall.objects.all().order_by('-id')[:3]
+
     return render(request,'halls/home.html',{'rec':recent_hall})
 @login_required
 def dashboard(request):

@@ -10,7 +10,7 @@
   </div>
 </section>
 <div class = 'container'>
-  <h1 class = 'text-center'>Recent Videos</h1>
+  <h1 class = 'text-center'>Popular Videos</h1>
   {% for hall in rec %}
   <h2><a href = "{% url 'detail' hall.id %}" id = 'ti'>{{hall.title}}</a></h2>
   <div class = 'row'>
