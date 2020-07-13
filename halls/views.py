@@ -86,21 +86,23 @@ class Update(LoginRequiredMixin,generic.UpdateView):
         if not hall.user == self.request.user :
             raise Http404
         return hall
-class Delete(LoginRequiredMixin,generic.DeleteView):
+class Delete(LoginRequiredMixin , generic.DeleteView):
     model = Hall
     template_name = 'halls/delete.html'
     success_url = reverse_lazy('dashboard')
     def get_object(self):
-        hall = super(Delete,self).get_object()
-        if hall.user == self.request.user :
+        video = super(Delete,self).get_object()
+        if not video.user == self.request.user :
             raise Http404
         return video
-class DelVid(LoginRequiredMixin,generic.DeleteView):
+class DelVid(LoginRequiredMixin , generic.DeleteView):
     model = Video
     template_name = 'halls/delvid.html'
     success_url = reverse_lazy('dashboard')
     def get_object(self):
-        video = super(DeLVid,self).get_object()
+        video = super(DelVid,self).get_object()
         if not video.hall.user == self.request.user :
             raise Http404
         return video
+def about(request):
+    return render(request,'halls/about.html')

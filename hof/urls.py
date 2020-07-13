@@ -17,5 +17,6 @@ urlpatterns = [
     path('halloffames/<int:pk>/update',views.Update.as_view(),name = 'update'),
     path('halloffames/<int:pk>/addvid',views.video,name = 'video'),
     path('video/search',views.video_search,name = 'video_search'),
-    path('video/<int:pk>/delete',views.DelVid.as_view(),name = 'delvid')
+    path('video/<int:pk>/delete',views.DelVid.as_view(),name = 'delvid'),
+    path('about',views.about,name = 'about'),
 ]+static(settings.STATIC_URL,document_root = settings.STATIC_ROOT)

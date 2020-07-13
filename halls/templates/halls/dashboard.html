@@ -6,7 +6,7 @@
     <a href = '{% url "create" %}' class = 'btn btn-primary'>Create New Hall of Fame</a>
   </div>
   {% for hall in hall %}
-  <h2><a href = "{% url 'detail' hall.id %}" style = 'color :black;'>{{hall.title}}</a></h2>
+  <h2><a href = "{% url 'detail' hall.id %}" id = 'ha'>{{hall.title}}</a></h2>
   <a href = '{% url "update" hall.id %}' class = 'btn btn-primary'>Edit</a>
   <a href = '{% url "video" hall.id%}' class = 'btn btn-primary'>Add Video</a>
   <a href = '{% url "delete" hall.id %}' class = 'btn btn-danger'>Delete</a>
