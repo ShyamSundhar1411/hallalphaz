@@ -28,7 +28,7 @@
       </div>
     {% endfor %}
     <h1 class = 'text-center'>Recent Videos</h1>
-    {% for hall in popular_halls %}
+    {% for hall in rec %}
     <h2><a href = "{% url 'detail' hall.id %}" id = 'ti'>{{hall.title}}</a></h2>
     <div class = 'row'>
         {% for vid in hall.video_set.all %}
