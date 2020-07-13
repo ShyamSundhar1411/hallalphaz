@@ -14,6 +14,7 @@
       {{ field.label_tag }}
       {% render_field field class='form-control' %}
       {% if field.help_text %}<small class = 'text-muted'>{{ field.help_text|safe }}</small>{% endif %}
+      <p class = 'text-muted'>Having account already ?<a href = '{% url "login" %}' id = 'ha'>Login</a>
     </div>
     {% endfor %}
     <br/>
