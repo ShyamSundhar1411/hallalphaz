@@ -14,7 +14,8 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 YOUTUBE_API_KEY = 'AIzaSyCUoHYkjv_WGJpkf4RgBd6VI_U5_FmxMx8'
 def home(request):
     recent_hall = Hall.objects.all().order_by('-id')[:2]
-    return render(request,'halls/home.html',{'rec':recent_hall})
+    popular_videos =[Hall.objects.get(pk=1),Hall.objects.get(pk=2),Hall.objects.get(pk=3)]
+    return render(request,'halls/home.html',{'rec':recent_hall,'pop':popular_videos})
 @login_required
 def dashboard(request):
     hall = Hall.objects.filter(user = request.user)
