@@ -27,6 +27,24 @@
       {% endfor %}
       </div>
     {% endfor %}
+    <h1 class="text-center">Recent Hall of Fames</h1>
+  {% for hall in rec %}
+
+<h2><a href="{% url 'detail_hall' hall.id %}">{{ hall.title }}</a></h2>
+
+  <div class="row">
+    {% for video in hall.video_set.all %}
+    <div class="col-md-4 mt-3">
+      <div class="card mb-4 shadow-sm">
+        <iframe width="100%" height="225" src="https://www.youtube.com/embed/{{ video.youtube_id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="card-body">
+          <p class="card-text">{{ video.title }}</p>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </div>
+  {% endfor %}
 
 </div>
 {% endblock %}
