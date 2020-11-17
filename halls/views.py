@@ -11,7 +11,7 @@ import urllib as u
 from django.forms.utils import ErrorList
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-YOUTUBE_API_KEY = 'AIzaSyCUoHYkjv_WGJpkf4RgBd6VI_U5_FmxMx8'
+YOUTUBE_API_KEY = 'AIzaSyC4lomMLWKw8OGVOBfSr9RsxtznY__TlCs'
 def home(request):
     recent_hall = Hall.objects.all().order_by('-id')[:3]
     popular_halls = [Hall.objects.get(pk=3),Hall.objects.get(pk=4),Hall.objects.get(pk=2)]
@@ -37,7 +37,7 @@ def video(request,pk):
             vidid = u.parse.parse_qs(parsed.query).get('v')
             if vidid:
                 vi.youtube_id = vidid[0]
-                response = requests.get(f'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={ vidid[0] }&key={YOUTUBE_API_KEY}')
+                response = requests.get(f'https://www.youtube.googleapis.com/youtube/v3/videos?part=snippet&id={ vidid[0] }&key={YOUTUBE_API_KEY}')
                 json = response.json()
                 title = json['items'][0]['snippet']['title']
                 vi.title = title
