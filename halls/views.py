@@ -37,7 +37,7 @@ def video(request,pk):
             vidid = u.parse.parse_qs(parsed.query).get('v')
             if vidid:
                 vi.youtube_id = vidid[0]
-                response = requests.get(f'https://www.youtube.googleapis.com/youtube/v3/videos?part=snippet&id={ vidid[0] }&key={ YOUTUBE_API_KEY }')
+                response = requests.get(f'https://www.googleapis.com/youtube/v3/videos?part=snippet&id={ vidid[0] }&key={ YOUTUBE_API_KEY }')
                 json = response.json()
                 title = json['items'][0]['snippet']['title']
                 vi.title = title
