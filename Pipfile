@@ -12,6 +12,8 @@ gunicorn = "*"
 dj-database-url = "*"
 psycopg2 = "*"
 psycopg2-binary = "*"
+requests = "*"
+urllib3 = "*"
 
 [dev-packages]
 
