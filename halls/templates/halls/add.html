@@ -2,7 +2,7 @@
 {% block content %}
 <div class = 'container'>
   <h2>Add Video to {{hall.title}}</h2>
-  <form method = 'post' id = 'sub'>
+  <form method = 'POST' id = 'sub'>
     {% csrf_token %}
     {% load widget_tweaks %}
     {% for field in form %}
