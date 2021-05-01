@@ -5,10 +5,10 @@ name = "pypi"
 
 [packages]
 django = "*"
-django-widget-tweaks = "*"
 pillow = "*"
+django-widget-tweaks = "*"
 
 [dev-packages]
 
 [requires]
-python_version = "3.9.4"
+python_version = "3.9"
