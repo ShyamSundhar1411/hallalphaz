@@ -7,6 +7,9 @@ name = "pypi"
 django = "*"
 pillow = "*"
 django-widget-tweaks = "*"
+whitenoise = "*"
+gunicorn = "*"
+dj-database-url = "*"
 
 [dev-packages]
 
