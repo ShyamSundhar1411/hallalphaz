@@ -1,20 +1,14 @@
 [[source]]
-name = "pypi"
 url = "https://pypi.org/simple"
 verify_ssl = true
-
-[dev-packages]
+name = "pypi"
 
 [packages]
 django = "*"
-pillow = "*"
 django-widget-tweaks = "*"
-requests = "*"
-unicorn = "*"
-psycopg2-binary = "*"
-dj-database-url = "*"
-whitenoise = "*"
-gunicorn = "*"
+pillow = "*"
+
+[dev-packages]
 
 [requires]
 python_version = "3.8"
