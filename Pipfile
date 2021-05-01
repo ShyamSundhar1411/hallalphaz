@@ -10,6 +10,8 @@ django-widget-tweaks = "*"
 whitenoise = "*"
 gunicorn = "*"
 dj-database-url = "*"
+psycopg2 = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 
